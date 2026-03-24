@@ -307,7 +307,7 @@ async function loadDemo() {
 function renderCatalog() {
 	// Title
 	const title = document.getElementById("catalog-title");
-	title.innerHTML = `Your <span>Mehndi Catalog</span> <small style="font-size:.6em;color:#8a6a4a;font-style:normal">(${allDesigns.length} designs)</small>`;
+	title.innerHTML = `Available <span>Mehndi Catalog</span> <small style="font-size:.6em;color:#8a6a4a;font-style:normal">(${allDesigns.length} designs)</small>`;
 	document.getElementById("catalog-header").style.display = "block";
 
 	// Categories
