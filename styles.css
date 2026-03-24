@@ -1,3 +1,30 @@
+/* Website Header Styles */
+.site-header {
+	width: 100%;
+	background: #4e2e13;
+	border-bottom: 1px solid #2d1807;
+	margin-bottom: 2rem;
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+	position: relative;
+	z-index: 10;
+}
+.header-inner {
+	margin: 0 auto;
+	display: flex;
+	align-items: center;
+	gap: 1.2rem;
+	padding: 1.2rem 1.5rem 1.2rem 0.7rem;
+	margin-inline: 32px;
+	justify-content: flex-end;
+}
+.site-title {
+	font-family: "Cormorant Garamond", serif;
+	font-size: 2.2rem;
+	font-weight: 600;
+	color: #fff;
+	letter-spacing: 0.02em;
+	line-height: 1;
+}
 :root {
 	--cream: #fdf6ec;
 	--dark: #1a0f00;
@@ -90,7 +117,9 @@ body {
 	font-size: 0.9rem;
 	color: var(--cream);
 	outline: none;
-	transition: border-color 0.2s, background 0.2s;
+	transition:
+		border-color 0.2s,
+		background 0.2s;
 }
 .input-row input::placeholder {
 	color: #7a5a3a;
@@ -111,7 +140,9 @@ body {
 	text-transform: uppercase;
 	cursor: pointer;
 	border-radius: 3px;
-	transition: background 0.2s, transform 0.15s;
+	transition:
+		background 0.2s,
+		transform 0.15s;
 }
 .btn-load:hover {
 	background: var(--copper-light);
@@ -282,7 +313,9 @@ body {
 	border-radius: 4px;
 	overflow: hidden;
 	border: 1px solid #ecdcc8;
-	transition: transform 0.25s, box-shadow 0.25s;
+	transition:
+		transform 0.25s,
+		box-shadow 0.25s;
 	cursor: pointer;
 	position: relative;
 }
