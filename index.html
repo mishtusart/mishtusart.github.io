@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Mehndi Catalog – From Google Sheets</title>
+		<link
+			href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@200;300;400;500&display=swap"
+			rel="stylesheet"
+		/>
+		<link rel="stylesheet" href="styles.css" />
+	</head>
+	<body>
+		<!---		
+        <div class="hero">
+			<p class="hero-ornament">✦ Mehndi Catalog Builder ✦</p>
+			<h1>Turn your Spreadsheet<br />into a <em>Beautiful Catalog</em></h1>
+			<p>
+				Paste your Google Sheets link below to generate your design portfolio
+			</p>
+
+			<div class="input-row">
+				<input
+					id="sheetUrl"
+					type="text"
+					placeholder="https://docs.google.com/spreadsheets/d/..."
+				/>
+				<button class="btn-load" onclick="loadSheet()">Generate Catalog</button>
+			</div>
+			<div class="try-example">
+				Don't have a sheet ready?
+				<button onclick="loadDemo()">Try demo data</button>
+			</div>
+		</div>
+
+		<div id="status"></div>
+		<div id="error-msg"></div>
+
+		<div id="instructions">
+			<h3>How it works</h3>
+			<div class="steps">
+				<div class="step">
+					<div class="step-num">1</div>
+					<p>Create a Google Sheet with your mehndi design data</p>
+				</div>
+				<div class="step">
+					<div class="step-num">2</div>
+					<p>
+						Make the sheet public: <em>Share → Anyone with link → Viewer</em>
+					</p>
+				</div>
+				<div class="step">
+					<div class="step-num">3</div>
+					<p>Paste the link above and click Generate Catalog</p>
+				</div>
+			</div>
+			<div class="col-map">
+				<h4>Expected Column Names (case-insensitive)</h4>
+				<table class="col-table">
+					<tr>
+						<td>name</td>
+						<td>Design name (e.g. "Bridal Full Hand")</td>
+					</tr>
+					<tr>
+						<td>price</td>
+						<td>Price (e.g. 500 or ₹500)</td>
+					</tr>
+					<tr>
+						<td>time / duration</td>
+						<td>Time required (e.g. "2 hours")</td>
+					</tr>
+					<tr>
+						<td>category</td>
+						<td>Design category (e.g. Bridal, Arabic, Indo-Western)</td>
+					</tr>
+					<tr>
+						<td>image / photo / img</td>
+						<td>Direct image URL</td>
+					</tr>
+					<tr>
+						<td>description / desc</td>
+						<td>Short description</td>
+					</tr>
+					<tr>
+						<td>rating / stars</td>
+						<td>Rating out of 5</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+        -->
+
+		<div id="catalog-header">
+			<h2 id="catalog-title">Your <span>Mehndi Catalog</span></h2>
+		</div>
+
+		<div id="controls">
+			<div class="controls-inner">
+				<div class="search-box">
+					<input
+						type="text"
+						id="searchInput"
+						placeholder="Search designs…"
+						oninput="filterCards()"
+					/>
+				</div>
+				<div class="filter-chips" id="filterChips"></div>
+				<select class="sort-select" id="sortSelect" onchange="filterCards()">
+					<option value="">Sort by Default</option>
+					<option value="price-asc">Price: Low to High</option>
+					<option value="price-desc">Price: High to Low</option>
+					<option value="name-asc">Name: A–Z</option>
+					<option value="time-asc">Time: Shortest</option>
+				</select>
+				<span class="result-count" id="resultCount"></span>
+			</div>
+		</div>
+
+		<div id="grid"></div>
+		<div id="empty">
+			<div class="big">✦</div>
+			<p>No designs match your filters.</p>
+		</div>
+
+		<!-- MODAL -->
+		<div id="modal-overlay" onclick="closeModal(event)">
+			<div class="modal" id="modal">
+				<div class="modal-img" id="modal-img-wrap"></div>
+				<div class="modal-content" id="modal-content"></div>
+			</div>
+		</div>
+
+		<script src="script.js"></script>
+	</body>
+</html>
