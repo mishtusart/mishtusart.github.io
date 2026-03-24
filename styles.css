@@ -649,10 +649,17 @@ body {
 		grid-template-columns: 1fr;
 	}
 	.modal {
-		grid-template-columns: 1fr;
+		display: flex;
+		flex-direction: column;
+		grid-template-columns: none;
 	}
 	.modal-img {
 		aspect-ratio: 1;
+	}
+	.modal-content {
+		flex: 1;
+		display: flex;
+		flex-direction: column;
 	}
 	#grid {
 		padding: 20px 16px 60px;
